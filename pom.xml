@@ -7,9 +7,13 @@
   <packaging>war</packaging>
   <name>Jetty HelloWorld WebApp</name>
   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <jettyVersion>9.3.9.v20160517</jettyVersion>
     <scm-connection>scm:git:git@github.com:open-toolchain/maven-example.git</scm-connection>
+    <sonar.language>java</sonar.language>
   </properties>
+
   <scm>
     <connection>${scm-connection}</connection>
     <url>${scm-connection}</url>
@@ -50,6 +54,15 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-deploy-plugin</artifactId>
         <version>2.8.2</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.0</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
       </plugin>
     </plugins>
   </build>
