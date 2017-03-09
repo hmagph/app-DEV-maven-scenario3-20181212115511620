@@ -27,7 +27,7 @@ public class HelloServlet extends HttpServlet {
 			response.getWriter().println("<h1>Hello Servlet!</h1>");
 			response.getWriter().println("session=" + request.getSession(true).getId());
 		} catch(IOException e) {
-			// ignore
+			throw new RuntimeException(e);
 		}
 	}
 }
