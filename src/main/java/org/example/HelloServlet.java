@@ -12,13 +12,18 @@
 package org.example;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class HelloServlet extends HttpServlet {
-	private static final long serialVersionUID = 6446827937200082683L;
+	private static final long serialVersionUID = -5528397520881527373L;
+
+	private static Logger LOGGER = Logger.getLogger(HelloServlet.class.getName());
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -29,7 +34,7 @@ public class HelloServlet extends HttpServlet {
 			response.getWriter().println("<h1>Hello Servlet!</h1>");
 			response.getWriter().println("session=" + request.getSession(true).getId() + " - Test sonar value" + new TestSonar(10));
 		} catch(Exception e) {
-			throw new MyException(e);
+			LOGGER.log(Level.SEVERE, "Exception ocurred", e);
 		}
 	}
 }
