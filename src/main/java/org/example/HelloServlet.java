@@ -27,7 +27,7 @@ public class HelloServlet extends HttpServlet {
 			response.setContentType("text/html");
 			response.setStatus(HttpServletResponse.SC_OK);
 			response.getWriter().println("<h1>Hello Servlet!</h1>");
-			response.getWriter().println("session=" + request.getSession(true).getId());
+			response.getWriter().println("session=" + request.getSession(true).getId() + " - Test sonar value" + new TestSonar(10));
 		} catch(Exception e) {
 			throw new MyException(e);
 		}
