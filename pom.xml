@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.ibm.otc</groupId>
   <artifactId>hello-world</artifactId>
-  <version>1.0.5</version>
+  <version>1.0.6-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>Jetty HelloWorld WebApp</name>
   <properties>
@@ -18,7 +18,7 @@
     <connection>${scm-connection}</connection>
     <url>${scm-connection}</url>
     <developerConnection>${scm-connection}</developerConnection>
-    <tag>v1.0.5</tag>
+    <tag>HEAD</tag>
   </scm>
   <dependencies>
     <dependency>
